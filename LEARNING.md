@@ -20,6 +20,16 @@ A running guide to what each step of this app teaches. Read it next to the code.
 5. Edit any file and save. The app on your phone updates within a second.
    This is called **fast refresh**.
 
+### If Expo Go says "Project is incompatible"
+
+Expo releases a new **SDK** (a bundle of matching library versions) about three
+times a year, and Expo Go from the app store supports one SDK at a time. Right
+after a new SDK comes out, the store version can lag behind. This project uses
+**SDK 57** (see `"expo"` in `package.json`) to match the Expo Go in Google Play.
+If the error comes back after a future upgrade, the fix is to move the project
+to the SDK your installed Expo Go supports, or install the matching Expo Go
+from https://expo.dev/go (Android only).
+
 ### The big ideas
 
 **React Native and Expo.** React Native lets you write a phone app in
