@@ -39,3 +39,7 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Ignore Play Store upload key
+google-service-account.json
+*.keystore

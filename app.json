@@ -1,29 +1,75 @@
 {
   "expo": {
-    "name": "whatsapp-scheduler",
-    "slug": "whatsapp-scheduler",
+    "name": "ChatLater",
+    "slug": "chatlater",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "scheme": "chatlater",
+    "userInterfaceStyle": "automatic",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.devsatish.chatlater"
     },
     "android": {
+      "package": "com.devsatish.chatlater",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "backgroundColor": "#0E9F6E",
+        "foregroundImage": "./assets/adaptive-foreground.png",
+        "monochromeImage": "./assets/adaptive-monochrome.png"
       },
+      "permissions": [
+        "android.permission.READ_CONTACTS",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.SCHEDULE_EXACT_ALARM",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.VIBRATE"
+      ],
+      "blockedPermissions": [
+        "android.permission.WRITE_CONTACTS",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.SYSTEM_ALERT_WINDOW"
+      ],
       "predictiveBackGestureEnabled": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
+      "expo-router",
       "@react-native-community/datetimepicker",
-      "expo-status-bar"
+      "expo-status-bar",
+      "expo-localization",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 120,
+          "backgroundColor": "#F4F6F8",
+          "dark": {
+            "image": "./assets/splash-icon.png",
+            "backgroundColor": "#0B0F12"
+          }
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#0E9F6E",
+          "defaultChannel": "reminders"
+        }
+      ],
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "ChatLater uses your contacts so you can pick who to message. Contacts never leave your phone."
+        }
+      ]
     ]
   }
 }
